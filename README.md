@@ -7,7 +7,7 @@ Requirements
 -------------
 * [jQuery](http://jquery.com/)
 * [jQuery Validation](http://jqueryvalidation.org/)
-* [Twitter Boostrap](http://twitter.github.io/bootstrap/index.html)
+* [Twitter Bootstrap](http://twitter.github.io/bootstrap/index.html)
 
 Usage
 ------
