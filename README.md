@@ -24,7 +24,7 @@ Tooltip options are given either through an element's data attributes or as obje
          
 Demo
 -----
-[Demo](http://wbp-tomh.github.io/jquery-validation-bootstrap-tooltip/) or it didn't happen
+[Demo](http://thrilleratplay.github.io/jquery-validation-bootstrap-tooltip/) or it didn't happen
 
 * * *     
 ###### Special Thanks to dennysfredericci
