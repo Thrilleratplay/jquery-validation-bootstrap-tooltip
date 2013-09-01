@@ -3,7 +3,7 @@
  *
  * https://github.com/wbp-tomh/jQuery-Validation-Bootstrap-tooltip
  *
- * Copyright 2013 Tom Hiller and Internet Marketing Ninjas
+ * Copyright 2013 Tom Hiller
  * Released under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  */
