@@ -1,7 +1,7 @@
 /*!
  * jQuery Validation Bootstrap Tooltip extention v0.2
  *
- * https://github.com/wbp-tomh/jQuery-Validation-Bootstrap-tooltip
+ * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
  * Copyright 2013 Tom Hiller
  * Released under the MIT license:
