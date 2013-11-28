@@ -1,9 +1,9 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.2
+ * jQuery Validation Bootstrap Tooltip extention v0.3
  *
- * https://github.com/wbp-tomh/jQuery-Validation-Bootstrap-tooltip
+ * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
- * Copyright 2013 Tom Hiller and Internet Marketing Ninjas
+ * Copyright 2013 Tom Hiller
  * Released under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  */
@@ -28,7 +28,7 @@
 					placement: $(element).data('placement')||'top',
 					selector: $(element).data('animation')||true,
 					title: $(element).attr('title')||message,
-					trigger: String('manual '+($(element).data('trigger')||'')).trim(),
+					trigger: $.trim('manual '+($(element).data('trigger')||'')),
 					delay: $(element).data('delay')||0,
 					container: $(element).data('container')||false
 				};
