@@ -1,5 +1,5 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.2
+ * jQuery Validation Bootstrap Tooltip extention v0.3
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
@@ -28,7 +28,7 @@
 					placement: $(element).data('placement')||'top',
 					selector: $(element).data('animation')||true,
 					title: $(element).attr('title')||message,
-					trigger: String('manual '+($(element).data('trigger')||'')).trim(),
+					trigger: $.trim('manual '+($(element).data('trigger')||'')),
 					delay: $(element).data('delay')||0,
 					container: $(element).data('container')||false
 				};

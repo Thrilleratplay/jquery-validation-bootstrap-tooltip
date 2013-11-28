@@ -21,7 +21,13 @@ Tooltip options are given either through an element's data attributes or as obje
                thefield: { placement: 'left' }
             }
          });
-         
+           
+Changelog
+-----
+0.3 - Fixed IE 7/8 error caused but the rouge trim function
+0.2 - Added extra error check and added minified version.
+0.1 - Inital release.
+        
 Demo
 -----
 [Demo](http://thrilleratplay.github.io/jquery-validation-bootstrap-tooltip/) or it didn't happen
