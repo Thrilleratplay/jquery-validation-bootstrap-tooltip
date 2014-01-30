@@ -5,9 +5,10 @@ A drop in extension replacing error labels from jQuery Validation plugin with Tw
 
 Requirements
 -------------
-* [jQuery](http://jquery.com/) - duh
-* [jQuery Validation](http://jqueryvalidation.org/) - duh
-* [Twitter Bootstrap](http://getbootstrap.com/) - duh
+* [jQuery](http://jquery.com/)
+* [jQuery Validation](http://jqueryvalidation.org/) 
+* [Twitter Bootstrap](http://getbootstrap.com/)  
+
 
 Usage
 ------
