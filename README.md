@@ -25,6 +25,7 @@ Tooltip options are given either through an element's data attributes or as obje
            
 Changelog
 -----
+* 0.4 - Fixed missing toggle of error/valid class on input element  
 * 0.3 - Fixed IE 7/8 error caused but the rouge trim function
 * 0.2 - Added extra error check and added minified version.
 * 0.1 - Inital release.
