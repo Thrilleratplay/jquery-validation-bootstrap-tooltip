@@ -1,9 +1,9 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.3
+ * jQuery Validation Bootstrap Tooltip extention v0.4
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
- * Copyright 2013 Tom Hiller
+ * Copyright 2014 Tom Hiller
  * Released under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  */
@@ -13,10 +13,10 @@
 			defaultShowErrors: function() {
 				var self=this;
 				$.each( this.successList, function(index, value) {
-					$(value).tooltip('destroy');
+					$(value).removeClass(self.settings.errorClass).addClass(self.settings.validClass).tooltip('destroy');
 				});
 				$.each( this.errorList, function(index, value) {
-					$(value.element).tooltip('destroy').tooltip(self.apply_tooltip_options(value.element,value.message)).tooltip('show'); 			
+					$(value.element).removeClass(self.settings.validClass).addClass(self.settings.errorClass).tooltip('destroy').tooltip(self.apply_tooltip_options(value.element,value.message)).tooltip('show'); 			
 				});
 			},
 			
