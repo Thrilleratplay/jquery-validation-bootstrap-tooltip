@@ -1,5 +1,5 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.4
+ * jQuery Validation Bootstrap Tooltip extention v0.5
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
@@ -14,9 +14,15 @@
 				var self=this;
 				$.each( this.successList, function(index, value) {
 					$(value).removeClass(self.settings.errorClass).addClass(self.settings.validClass).tooltip('destroy');
+					if (self.settings.unhighlight) {
+						self.settings.unhighlight.call( self, value, self.settings.errorClass, self.settings.validClass );
+					}
 				});
 				$.each( this.errorList, function(index, value) {
 					$(value.element).removeClass(self.settings.validClass).addClass(self.settings.errorClass).tooltip('destroy').tooltip(self.apply_tooltip_options(value.element,value.message)).tooltip('show'); 			
+					if ( self.settings.highlight ) {
+						self.settings.highlight.call( self, value.element, self.settings.errorClass, self.settings.validClass );
+					}
 				});
 			},
 			
