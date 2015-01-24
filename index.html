@@ -5,10 +5,10 @@
 	<meta content="A drop in extension replacing error labels from jQuery Validation plugin with Twitter Bootstrap tooltips" name="description">
 	<meta content="jquery validation twitter bootstrap tooltip popover plugin error label extension validate" name="keywords">
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
-	<script type="text/javascript" src="js/bootstrap.min.js" /></script>
-	<script type="text/javascript" src="js/jquery.validate.js" /></script>
-	<script type="text/javascript" src="js/jquery-validate.bootstrap-tooltip.js" /></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/jquery-validate.bootstrap-tooltip.js"></script>
 	<script type="text/javascript">		
 	$(document).ready(function(){
 		$("#theform").validate({
@@ -80,7 +80,7 @@
 							<div class="span1">
 								<label class="text-right">Tag</label>
 							</div>
-							<div class=span7">
+							<div class="span7">
 								<code>&lt;input type="text" name="example1" required&gt;</code>
 							</div>	
 						</div>
@@ -103,7 +103,7 @@
 							<div class="span1">
 								<label class="text-right">Tag</label>
 							</div>
-							<div class=span7">
+							<div class="span7">
 								<code>&lt;input type="number" data-placement="bottom" name="example2" required name="example2"&gt;</code>
 							</div>	
 						</div>
@@ -127,7 +127,7 @@
 							<div class="span1">
 								<label class="text-right">Tag</label>
 							</div>
-							<div class=span7">
+							<div class="span7">
 								<code>&lt;input type="text" class="required email" data-trigger="focus" name="example3""&gt;</code>
 							</div>	
 						</div>	
@@ -192,7 +192,7 @@
 									<li>
 										<code>});</code>
 									</li>
-								</ul>
+								</ul>	
 							</div>					
 						</div>				
 						
@@ -214,13 +214,36 @@
 							<div class="span1">
 								<label class="text-right">Tag</label>
 							</div>
-							<div class=span7">
+							<div class="span7">
 								<code>&lt;input type="text" name="example4"&gt;</code>
 							</div>	
-						</div>						
-												
+						</div>
+						
+						<div class="row margin-top30">
+							<div class="span8">	
+					 			<div class="alert alert-info">To apply the same options to all fields, the object key "<strong>_all_</strong>" can be used.</div>
+								<ul class="unstyled">
+									<li>               
+										<code>tooltip_options: {</code>
+									</li>
+									<li>
+										<ul class="padding-left30 unstyled">
+											<li>
+                    							<code>'_all_': { placement: 'right' }</code>
+                    						</li>
+                    					</ul>
+                    				<li>
+                						<code>}</code>
+									</li>
+								</ul>	
+							</div>
+						</div>
+					</fieldset>
+					
+					<legend class="margin-top30">Additional Examples</legend>				
+					<fieldset>						
 						<!--Example 5: HTML in tooltip -->							 
-						<div class="margin-top30">
+						<div>
 							<strong>
 								<p>Example 5: HTML in tooltip</p>
 							</strong>
@@ -239,7 +262,7 @@
 							<div class="span1">
 								<label class="text-right">Tag</label>
 							</div>
-							<div class=span7">
+							<div class="span7">
 								<code>&lt;input type="checkbox" name="example5"&gt;</code>
 							</div>	
 						</div>						
