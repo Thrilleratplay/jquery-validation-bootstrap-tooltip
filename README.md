@@ -25,6 +25,7 @@ Tooltip options are given either through an element's data attributes or as obje
            
 Changelog
 -----
+* 0.7 - Added ability to apply options to all elements. Thanks to [thiagof](https://github.com/thiagof)
 * 0.6 - Corrected default selector option 
 * 0.5 - Fixed missing highlight/unhighlight calls
 * 0.4 - Fixed missing toggle of error/valid class on input element  
