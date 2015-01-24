@@ -41,6 +41,9 @@
 				if(this.settings.tooltip_options&&this.settings.tooltip_options[element.name]){
 					$.extend(options,this.settings.tooltip_options[element.name]);
 				}
+				if(this.settings.tooltip_options&&this.settings.tooltip_options['_all_']){
+					$.extend(options,this.settings.tooltip_options['_all_']);
+				}
 				return options;
 			}
 		}
