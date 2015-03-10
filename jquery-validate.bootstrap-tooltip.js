@@ -19,10 +19,19 @@
 					}
 				});
 				$.each( this.errorList, function(index, value) {
-					$(value.element).removeClass(self.settings.validClass).addClass(self.settings.errorClass).tooltip('destroy').tooltip(self.apply_tooltip_options(value.element,value.message)).tooltip('show'); 			
-					if ( self.settings.highlight ) {
-						self.settings.highlight.call( self, value.element, self.settings.errorClass, self.settings.validClass );
-					}
+					    var currentElement = $(value.element);
+			                    if (currentElement.data('bs.tooltip') != undefined) {
+			                        currentElement.data('bs.tooltip').options.title = value.message;
+			                    }
+			                    else {
+			                        currentElement.tooltip(self.apply_tooltip_options(value.element, value.message));
+			                    }
+			
+			                    $(value.element).removeClass(self.settings.validClass).addClass(self.settings.errorClass).tooltip('show');
+			
+			                    if (self.settings.highlight) {
+			                        self.settings.highlight.call(self, value.element, self.settings.errorClass, self.settings.validClass);
+			                    }
 				});
 			},
 			
