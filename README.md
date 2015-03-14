@@ -23,6 +23,10 @@ Tooltip options are given either through an element's data attributes or as obje
             }
          });
            
+ASP MVC developers
+-------
+There is an equivalent project that caters to jQuery Validation Unobtrusive, [johnnyreilly/jQuery.Validation.Unobtrusive.Native](https://github.com/johnnyreilly/jQuery.Validation.Unobtrusive.Native) and also provides [tooltip errors](http://johnnyreilly.github.io/jQuery.Validation.Unobtrusive.Native/AdvancedDemo/Tooltip.html)
+
 Changelog
 -----
 * 0.7 - Added ability to apply options to all elements. Thanks to [thiagof](https://github.com/thiagof)
