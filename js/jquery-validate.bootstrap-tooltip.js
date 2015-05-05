@@ -1,5 +1,5 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.7
+ * jQuery Validation Bootstrap Tooltip extention v0.7.1
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
@@ -8,44 +8,47 @@
  *   http://www.opensource.org/licenses/mit-license.php
  */
 (function($) {
-	$.extend(true,$.validator, {
-		prototype:{
-			defaultShowErrors: function() {
-				var self=this;
-				$.each( this.successList, function(index, value) {
-					$(value).removeClass(self.settings.errorClass).addClass(self.settings.validClass).tooltip('destroy');
-					if (self.settings.unhighlight) {
-						self.settings.unhighlight.call( self, value, self.settings.errorClass, self.settings.validClass );
-					}
-				});
-				$.each( this.errorList, function(index, value) {
-					$(value.element).removeClass(self.settings.validClass).addClass(self.settings.errorClass).tooltip('destroy').tooltip(self.apply_tooltip_options(value.element,value.message)).tooltip('show'); 			
-					if ( self.settings.highlight ) {
-						self.settings.highlight.call( self, value.element, self.settings.errorClass, self.settings.validClass );
-					}
-				});
-			},
-			
-			apply_tooltip_options: function(element, message){
-				var options={
-					/* Using Twitter Bootstrap Defaults if no settings are given */ 
-					animation: $(element).data('animation')||true,
-					html: $(element).data('html')||false,
-					placement: $(element).data('placement')||'top',
-					selector: $(element).data('animation')||false,
-					title: $(element).attr('title')||message,
-					trigger: $.trim('manual '+($(element).data('trigger')||'')),
-					delay: $(element).data('delay')||0,
-					container: $(element).data('container')||false
-				};
-				if(this.settings.tooltip_options&&this.settings.tooltip_options[element.name]){
-					$.extend(options,this.settings.tooltip_options[element.name]);
-				}
-				if(this.settings.tooltip_options&&this.settings.tooltip_options['_all_']){
-					$.extend(options,this.settings.tooltip_options['_all_']);
-				}
-				return options;
-			}
-		}
-	});
+  $.extend(true, $.validator, {
+    prototype: {
+      defaultShowErrors: function() {
+        var _this = this;
+        $.each(this.successList, function(index, value) {
+          $(value).removeClass(_this.settings.errorClass).addClass(_this.settings.validClass).tooltip('destroy');
+          if (_this.settings.unhighlight) {
+            _this.settings.unhighlight.call(_this, value, _this.settings.errorClass, _this.settings.validClass);
+          }
+        });
+
+        $.each(this.errorList, function(index, value) {
+          $(value.element).removeClass(_this.settings.validClass).addClass(_this.settings.errorClass).tooltip('destroy').tooltip(_this.applyTooltipOptions(value.element, value.message)).tooltip('show');
+          if (_this.settings.highlight) {
+            _this.settings.highlight.call(_this, value.element, _this.settings.errorClass, _this.settings.validClass);
+          }
+        });
+      },
+
+      applyTooltipOptions: function(element, message) {
+        var options = {
+          /* Using Twitter Bootstrap Defaults if no settings are given */
+          animation: $(element).data('animation') || true,
+          html: $(element).data('html') || false,
+          placement: $(element).data('placement') || 'top',
+          selector: $(element).data('animation') || false,
+          title: $(element).attr('title') || message,
+          trigger: $.trim('manual ' + ($(element).data('trigger') || '')),
+          delay: $(element).data('delay') || 0,
+          container: $(element).data('container') || false
+        };
+        if (this.settings.tooltip_options && this.settings.tooltip_options[element.name]) {
+          $.extend(options, this.settings.tooltip_options[element.name]);
+        }
+        /* jshint ignore:start */
+        if (this.settings.tooltip_options && this.settings.tooltip_options['_all_']) {
+          $.extend(options, this.settings.tooltip_options['_all_']);
+        }
+        /* jshint ignore:end */
+        return options;
+      }
+    }
+  });
 }(jQuery));
