@@ -1,5 +1,5 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.7.1
+ * jQuery Validation Bootstrap Tooltip extention v0.7.1 - flicker fix
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
@@ -9,7 +9,7 @@
  */
 (function($) {
   $.extend(true, $.validator, {
-    prototype: {
+    prototype:{
       defaultShowErrors: function() {
         var _this = this;
         $.each(this.successList, function(index, value) {
@@ -20,7 +20,15 @@
         });
 
         $.each(this.errorList, function(index, value) {
-          $(value.element).removeClass(_this.settings.validClass).addClass(_this.settings.errorClass).tooltip('destroy').tooltip(_this.applyTooltipOptions(value.element, value.message)).tooltip('show');
+          var currentElement = $(value.element);
+          if (currentElement.data('bs.tooltip') !== undefined) {
+            currentElement.data('bs.tooltip').options.title = value.message;
+          } else {
+            currentElement.tooltip(_this.applyTooltipOptions(value.element, value.message));
+          }
+
+          $(value.element).removeClass(_this.settings.validClass).addClass(_this.settings.errorClass).tooltip('show');
+
           if (_this.settings.highlight) {
             _this.settings.highlight.call(_this, value.element, _this.settings.errorClass, _this.settings.validClass);
           }
@@ -43,10 +51,11 @@
           $.extend(options, this.settings.tooltip_options[element.name]);
         }
         /* jshint ignore:start */
-        if (this.settings.tooltip_options && this.settings.tooltip_options['_all_']) {
-          $.extend(options, this.settings.tooltip_options['_all_']);
+        if (this.settings.tooltip_options && this.settings.tooltip_options['all']) {
+          $.extend(options, this.settings.tooltip_options['all']);
         }
         /* jshint ignore:end */
+
         return options;
       }
     }
