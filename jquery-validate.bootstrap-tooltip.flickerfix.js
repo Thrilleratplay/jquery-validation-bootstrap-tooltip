@@ -1,5 +1,5 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.7.1 - flicker fix
+ * jQuery Validation Bootstrap Tooltip extention v0.8.0 - flicker fix
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
@@ -12,12 +12,6 @@
     prototype:{
       defaultShowErrors: function() {
         var _this = this;
-        $.each(this.successList, function(index, value) {
-          $(value).removeClass(_this.settings.errorClass).addClass(_this.settings.validClass).tooltip('destroy');
-          if (_this.settings.unhighlight) {
-            _this.settings.unhighlight.call(_this, value, _this.settings.errorClass, _this.settings.validClass);
-          }
-        });
 
         $.each(this.errorList, function(index, value) {
           var currentElement = $(value.element);
@@ -31,6 +25,13 @@
 
           if (_this.settings.highlight) {
             _this.settings.highlight.call(_this, value.element, _this.settings.errorClass, _this.settings.validClass);
+          }
+        });
+
+        $.each(_this.validElements(), function(index, value) {
+          $(value).removeClass(_this.settings.errorClass).addClass(_this.settings.validClass).tooltip('destroy');
+          if (_this.settings.unhighlight) {
+            _this.settings.unhighlight.call(_this, value, _this.settings.errorClass, _this.settings.validClass);
           }
         });
       },
