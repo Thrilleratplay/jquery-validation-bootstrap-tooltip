@@ -30,6 +30,7 @@ There is an equivalent project that caters to jQuery Validation Unobtrusive, [jo
 
 Changelog
 -----
+* 0.9.0 - Corrected selector data parameter Thanks to [QN-Solutions](https://github.com/QN-Solutions)
 * 0.8.0 - Properly remove error class when valid
 * 0.7.1 - Created flickerfix version for Bootstrap 3.3.0 and up  Thanks to [luis226](https://github.com/luis226). Linted.
 * 0.7 -   Added ability to apply options to all elements. Thanks to [thiagof](https://github.com/thiagof)

@@ -1,5 +1,5 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.8.0 - flicker fix
+ * jQuery Validation Bootstrap Tooltip extention v0.9.0 - flicker fix
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
