@@ -1,5 +1,5 @@
 /*!
- * jQuery Validation Bootstrap Tooltip extention v0.9.0 - flicker fix
+ * jQuery Validation Bootstrap Tooltip extention v0.9.1 - flicker fix
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
@@ -52,8 +52,8 @@
           $.extend(options, this.settings.tooltip_options[element.name]);
         }
         /* jshint ignore:start */
-        if (this.settings.tooltip_options && this.settings.tooltip_options['all']) {
-          $.extend(options, this.settings.tooltip_options['all']);
+        if (this.settings.tooltip_options && this.settings.tooltip_options['_all_']) {
+          $.extend(options, this.settings.tooltip_options['_all_']);
         }
         /* jshint ignore:end */
 
