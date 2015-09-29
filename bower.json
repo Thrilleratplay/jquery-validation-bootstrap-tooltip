@@ -1,12 +1,12 @@
 {
   "name": "jquery-validation-bootstrap-tooltip",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "homepage": "https://github.com/Thrilleratplay/jquery-validation-bootstrap-tooltip",
   "authors": [
     "ThrillerAtPlay <thrilleratplay@gmail.com>"
   ],
   "description": "A drop in extension replacing error labels from jQuery Validation plugin with Twitter Bootstrap tooltips",
-  "main": "jquery-validate.bootstrap-tooltip.flickerfix.js",
+  "main": "jquery-validate.bootstrap-tooltip.js",
   "keywords": [
     "jquery",
     "validation",
