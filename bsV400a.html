@@ -4,9 +4,10 @@
 <head>
 	<meta content="A drop in extension replacing error labels from jQuery Validation plugin with Twitter Bootstrap tooltips" name="description">
 	<meta content="jquery validation twitter bootstrap tooltip popover plugin error label extension validate" name="keywords">
-	<link type="text/css" rel="stylesheet" href="css/bootstrap-3.3.5.min.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap-4.0.0a.min.css">
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap-3.3.5.min.js" /></script>
+	<script type="text/javascript" src="js/tether.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-4.0.0a.min.js" /></script>
 	<script type="text/javascript" src="js/jquery.validate-1.14.0.min.js" /></script>
 	<script type="text/javascript" src="js/jquery-validate.bootstrap-tooltip.js" /></script>
 	<script type="text/javascript">
@@ -44,9 +45,17 @@
 	</script>
 </head>
 <style type="text/css">
-	code {border:0;}
-	.margin-top30 {margin-top:30px;}
-	.padding-left30 {padding-left:30px;}
+	code {
+		border: 0;
+	}
+
+	.margin-top30 {
+		margin-top: 30px;
+	}
+
+	.padding-left30 {
+		padding-left: 30px;
+	}
 </style>
 
 <body>
@@ -64,7 +73,8 @@
 						<h4>jQuery-Validation-Bootstrap-tooltip demo</h4>
 					</div>
 					<p>Below are a few examples of how jQuery-Validation-Bootstrap-tooltip can utilize tooltips to display validation error labels with blatant abuse of default Twitter Bootstrap styles. The accompanying tag code is the same as input sans the placeholder
-						attribute.</p>
+						attribute.
+					</p>
 					<p>
 						<span class="label label-info">Note</span>
 						The HTML5 required attribute will invoke the broswer's default error indicator (typically a red border around the input). Using the required class will not.
@@ -221,12 +231,12 @@
 							<code>&lt;input type="checkbox" name="example5"&gt;</code>
 						</div>
 					</fieldset>
-						<div class="row margin-top30">
-							<div class="col-md-5">
-								<input type="submit" class="btn btn-primary pull-right" value="Check 'em">
-							</div>
-							<div class="col-md-5" id="validity_label"></div>
+					<div class="row margin-top30">
+						<div class="col-md-5">
+							<input type="submit" class="btn btn-primary pull-right" value="Check 'em">
 						</div>
+						<div class="col-md-5" id="validity_label"></div>
+					</div>
 				</form>
 			</div>
 		</div>

@@ -1,0 +1,285 @@
+	<!DOCTYPE HTML>
+	<html lang="en">
+	<head>
+		<title>jQuery-Validation-Bootstrap-tooltip Demo</title>
+		<meta content="A drop in extension replacing error labels from jQuery Validation plugin with Twitter Bootstrap tooltips" name="description">
+		<meta content="jquery validation twitter bootstrap tooltip popover plugin error label extension validate" name="keywords">
+		<!--
+		<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" /></script>
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js" /></script>
+	-->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap-2.3.2.min.css">
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-2.3.2.min.js" /></script>
+		<script type="text/javascript" src="js/jquery.validate-1.14.0.min.js" /></script>
+		<script type="text/javascript" src="js/jquery-validate.bootstrap-tooltip.js" /></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#theform").validate({
+				rules: {
+					example4: {email:true,required: true},
+					example5: {required: true}
+				},
+				messages: {
+					example5: "Just check the box<h5 class='text-error'>You aren't going to read the EULA</h5>"
+				},
+				tooltip_options: {
+					example4: {trigger:'focus'},
+					example5: {placement:'right',html:true}
+				},
+				submitHandler: function(form) {
+					$("#validity_label").html('<div class="alert alert-success">No errors.  Like a boss.</div>');
+				},
+				invalidHandler: function(form, validator) {
+					$("#validity_label").html('<div class="alert alert-error">There be '+validator.numberOfInvalids()+' error'+(validator.numberOfInvalids()>1?'s':'')+' here.  OH NOES!!!!!</div>');
+				}
+			});
+		});
+		</script>
+	</head>
+	<style type="text/css">
+		code {border:0;}
+		.padding-top5 {padding-top:5px;}
+		.margin-top30 {margin-top:30px;}
+		.padding-left30 {padding-left:30px;}
+	</style>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span2 well well-small">
+					<a class="btn btn-link" href="https://github.com/Thrilleratplay/jquery-validation-bootstrap-tooltip">Github project</a>
+					<h6>References</h6>
+					<a class="btn btn-link" href="http://getbootstrap.com/javascript/#tooltips">Bootstrap Tooltip</a>
+					<a class="btn btn-link" href="http://jqueryvalidation.org/documentation/">jQuery Validation</a>
+				</div>
+				<div class="span9 well well-small">
+					<section>
+						<div class="page-header text-center" style="color:#666;">
+							<h4>jQuery-Validation-Bootstrap-tooltip demo</h4>
+						</div>
+						<p>Below are a few examples of how jQuery-Validation-Bootstrap-tooltip can utilize tooltips to display validation error labels with blatant abuse of default Twitter Bootstrap styles.  The accompanying tag code is the same as input sans the placeholder attribute.</p>
+						<p class="padding-top5">
+							<span class="label label-info">Note</span>
+							The HTML5 required attribute will invoke the broswer's default error indicator (typically a red border around the input).  Using the required class will not.
+						</p>
+					</section>
+					<form id="theform" >
+						<legend>Examples using data attributes</legend>
+						<fieldset>
+							<!--Example 1: Required input with default options -->
+							<div>
+								<strong>
+									<p>Example 1: Required input with default options.</p>
+								</strong>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right padding-top5">Input</label>
+								</div>
+								<div class="span7">
+									<input type="text" name="example1" required placeholder="Required">
+								</div>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right">Tag</label>
+								</div>
+								<div class="span7">
+									<code>&lt;input type="text" name="example1" required&gt;</code>
+								</div>
+							</div>
+
+							<!--Example 2: Change tooltop placement with an attribute -->
+							<div class="margin-top30">
+								<strong>
+									<p>Example 2: Change tooltop placement with an attribute</p>
+								</strong>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right padding-top5">Input</label>
+								</div>
+								<div class="span7">
+									<input type="number" data-placement="bottom" name="example2" required placeholder="Number required">
+								</div>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right">Tag</label>
+								</div>
+								<div class="span7">
+									<code>&lt;input type="number" data-placement="bottom" name="example2" required name="example2"&gt;</code>
+								</div>
+							</div>
+
+
+							<!--Example 3: After failing validation, bind an additional tooltip trigger to the focus event-->
+							<div class="margin-top30">
+								<strong>
+									<p>Example 3: After failing validation, bind an additional tooltip trigger to the focus event</p>
+								</strong>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right padding-top5">Input</label>
+								</div>
+								<div class="span7">
+									<input type="text" class="required email" data-trigger="focus" name="example3" placeholder="Email required">
+								</div>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right">Tag</label>
+								</div>
+								<div class="span7">
+									<code>&lt;input type="text" class="required email" data-trigger="focus" name="example3""&gt;</code>
+								</div>
+							</div>
+						</fieldset>
+
+						<legend class="margin-top30">Examples using JavaScript</legend>
+						<fieldset>
+							<div class="row">
+								<div class="span8">
+									<ul class="unstyled">
+										<li>
+											<code>$("#theform").validate({</code>
+										</li>
+										<li>
+											<ul class="padding-left30 unstyled">
+												<li>
+													<code>rules: { </code>
+												</li>
+												<li>
+													<ul class="padding-left30 unstyled">
+														<li>
+															<code>example4: {email:true, required: true},</code>
+														</li>
+														<li>
+															<code>example5: {required: true}</code>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<code>},</code>
+												</li>
+												<li>
+													<code>messages: {</code>
+												</li>
+													<ul class="padding-left30 unstyled">
+														<li>
+															<code>example5: "Just check the box&lt;h5 class='text-error'&gt;You aren't going to read the EULA&lt;/h5&gt;"</code>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<code>},</code>
+												</li>
+												<li>
+													<code>tooltip_options: {</code>
+												</li>
+												<li>
+													<ul class="padding-left30 unstyled">
+														<li>
+															<code>example4: {trigger:'focus'},</code>
+														</li>
+														<li>
+															<code>example5: {placement:'right',html:true}</code>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<code>},</code>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<code>});</code>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<!--Example 4: Same as Example 3 but using validate() instead-->
+							<div class="margin-top30">
+								<strong>
+									<p>Example 4: Same as Example 3 but using validate() instead</p>
+								</strong>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right padding-top5">Input</label>
+								</div>
+								<div class="span7">
+									<input type="text" name="example4" placeholder="Email required">
+								</div>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right">Tag</label>
+								</div>
+								<div class="span7">
+									<code>&lt;input type="text" name="example4"&gt;</code>
+								</div>
+							</div>
+
+							<div class="row margin-top30">
+								<div class="span8">
+						 			<div class="alert alert-info">To apply the same options to all fields, the object key "<strong>_all_</strong>" can be used.</div>
+									<ul class="unstyled">
+										<li>
+											<code>tooltip_options: {</code>
+										</li>
+										<li>
+											<ul class="padding-left30 unstyled">
+												<li>
+	                    							<code>'_all_': { placement: 'right' }</code>
+	                    						</li>
+	                    					</ul>
+	                    				<li>
+	                						<code>}</code>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</fieldset>
+
+						<legend class="margin-top30">Additional Examples</legend>
+						<fieldset>
+							<!--Example 5: HTML in tooltip -->
+							<div>
+								<strong>
+									<p>Example 5: HTML in tooltip</p>
+								</strong>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right padding-top5">Input</label>
+								</div>
+								<div class="span7">
+									<label class="checkbox">
+										<input type="checkbox" name="example5"> Some EULA you did not actually read but will check the box saying you did.
+									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="span1">
+									<label class="text-right">Tag</label>
+								</div>
+								<div class="span7">
+									<code>&lt;input type="checkbox" name="example5"&gt;</code>
+								</div>
+							</div>
+						</fieldset>
+						<div class="row margin-top30">
+							<div class="span5" id="validity_label"></div>
+							<div class="span5"><input type="submit" class="btn btn-primary pull-right" value="Check 'em"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<html>
