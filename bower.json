@@ -20,8 +20,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "jquery": "~1.10",
-    "bootstrap": "~3.3.5"
+    "jquery": "^1.10",
+    "bootstrap": "^3.3.5"
   },
   "ignore": [
     "**/.*",
