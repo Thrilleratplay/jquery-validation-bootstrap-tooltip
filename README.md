@@ -28,6 +28,7 @@ There is an equivalent project that caters to jQuery Validation Unobtrusive, [jo
 
 Changelog
 -----
+* 0.10.1 - Add missing dispose for Bootstrap 4.0.0 alpha.  Thanks to [p34eu](https://github.com/p34eu)
 * 0.10.0 - Merged flickerfix and Bootstrap 4.0.0 alpha update into single script.
 * 0.9.1 - Corrected '_all_' option in flickerfix version.
 * 0.9.0 - Corrected selector data parameter Thanks to [QN-Solutions](https://github.com/QN-Solutions)
