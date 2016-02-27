@@ -36,7 +36,7 @@
 
             $(value.element).removeClass(_this.settings.validClass).addClass(_this.settings.errorClass).tooltip('show');
           } else {
-            $(value.element).removeClass(_this.settings.validClass).addClass(_this.settings.errorClass).tooltip('destroy').tooltip(_this.applyTooltipOptions(value.element, value.message)).tooltip('show');
+            $(value.element).removeClass(_this.settings.validClass).addClass(_this.settings.errorClass).tooltip(bsMajorVer === 4 ? 'dispose' : 'destroy').tooltip(_this.applyTooltipOptions(value.element, value.message)).tooltip('show');
           }
 
           if (_this.settings.highlight) {
