@@ -55,14 +55,14 @@
       applyTooltipOptions: function(element, message) {
         var options = {
           /* Using Twitter Bootstrap Defaults if no settings are given */
-          animation: $(element).data('animation') || true,
-          html: $(element).data('html') || false,
-          placement: $(element).data('placement') || 'top',
-          selector: $(element).data('selector') || false,
+          animation: $(element).data('animation') || $.fn.tooltip.Constructor.DEFAULTS.animation,
+          html: $(element).data('html') || $.fn.tooltip.Constructor.DEFAULTS.html,
+          placement: $(element).data('placement') || $.fn.tooltip.Constructor.DEFAULTS.placement,
+          selector: $(element).data('selector') || $.fn.tooltip.Constructor.DEFAULTS.selector,
           title: $(element).attr('title') || message,
           trigger: $.trim('manual ' + ($(element).data('trigger') || '')),
-          delay: $(element).data('delay') || 0,
-          container: $(element).data('container') || false,
+          delay: $(element).data('delay') || $.fn.tooltip.Constructor.DEFAULTS.delay,
+          container: $(element).data('container') || $.fn.tooltip.Constructor.DEFAULTS.container
         };
 
         if (this.settings.tooltip_options && this.settings.tooltip_options[element.name]) {
