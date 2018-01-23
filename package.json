@@ -19,7 +19,7 @@
     "validate"
   ],
   "dependencies": {
-    "jquery": "^1.10",
+    "jquery": "^3.0.0",
     "bootstrap": "^3.3.5"
   },
   "author": "ThrillerAtPlay <thrilleratplay@gmail.com>",
