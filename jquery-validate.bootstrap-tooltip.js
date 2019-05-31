@@ -38,6 +38,19 @@
             $(value.element).removeClass(_this.settings.validClass)
                             .addClass(_this.settings.errorClass)
                             .tooltip('show');
+          } 
+          //If Bootstrap 4 or greater 
+           if (bsMajorVer >= 4 ) {
+            var $currentElement = $(value.element);
+            if ($currentElement.data('bs.tooltip') !== undefined) {
+              $currentElement.data('bs.tooltip').element.title = value.message;
+            } else {
+              $currentElement.tooltip(_this.applyTooltipOptions(value.element, value.message));
+            }
+
+            $(value.element).removeClass(_this.settings.validClass)
+                            .addClass(_this.settings.errorClass)
+                            .tooltip('show');
           } else {
             $(value.element).removeClass(_this.settings.validClass)
                             .addClass(_this.settings.errorClass)
