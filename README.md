@@ -7,7 +7,7 @@ Requirements
 -------------
 * [jQuery](http://jquery.com/)
 * [jQuery Validation](http://jqueryvalidation.org/)
-* [Twitter Bootstrap](http://getbootstrap.com/) (Tested with v2.3.2, v3.3.5 and 4.0.0alpha)
+* [Twitter Bootstrap](http://getbootstrap.com/) (Tested with v2.3.2, v3.3.5 and v4.1.2.  v5 is reported to work as well)
 
 Usage
 ------
@@ -28,6 +28,7 @@ There is an equivalent project that caters to jQuery Validation Unobtrusive, [jo
 
 Changelog
 -----
+* 0.11.0 - Reported to work with v5 and update version check.  Thanks to [jeffreywalters](https://github.com/jeffreywalters)
 * 0.10.3 - Update dependencies
 * 0.10.2 - Use Boostrap defined defaults.  Thanks to [fernandoluizao](https://github.com/fernandoluizao)
 * 0.10.1 - Add missing dispose for Bootstrap 4.0.0 alpha.  Thanks to [p34eu](https://github.com/p34eu)
