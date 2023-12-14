@@ -1,6 +1,6 @@
 /**
  * @preserve
- * jQuery Validation Bootstrap Tooltip extention v0.10.3
+ * jQuery Validation Bootstrap Tooltip extension v0.11.0
  *
  * https://github.com/Thrilleratplay/jQuery-Validation-Bootstrap-tooltip
  *
